@@ -27,6 +27,30 @@ const server = http.createServer((req, res)=>{
             }
         })
     }
+    else if(req.url == '/contact'){
+        fs.readFile('Contact.html', (err, data)=>{
+            if(!err){
+                res.writeHead(200, {'content-type': 'text/html'});
+                res.write(data);
+                res.end();
+            }else{
+                res.write("File not found");
+                res.end();
+            }
+        })
+    }
+    else if(req.url == '/terms'){
+        fs.readFile('Terms.html', (err, data)=>{
+            if(!err){
+                res.writeHead(200, {'content-type': 'text/html'});
+                res.write(data);
+                res.end();
+            }else{
+                res.write("File not found");
+                res.end();
+            }
+        })
+    }
     
 })
 
