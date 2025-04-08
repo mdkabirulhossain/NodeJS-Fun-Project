@@ -4,7 +4,7 @@ const url = require('url')
 
 const server = http.createServer((req, res)=>{
     if(req.url == '/'){
-        fs.readFile('./Pages/Home.html', (err, data)=>{
+        fs.readFile('./Pages/Home.html','utf-8', (err, data)=>{
             if(!err){
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(data);
@@ -15,8 +15,8 @@ const server = http.createServer((req, res)=>{
             }
         })
     }
-    else if(req.url == './Pages/about'){
-        fs.readFile('./Pages/About.html', (err, data)=>{
+    else if(req.url == '/about'){
+        fs.readFile('./Pages/About.html','utf-8', (err, data)=>{
             if(!err){
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(data);
@@ -28,7 +28,7 @@ const server = http.createServer((req, res)=>{
         })
     }
     else if(req.url == '/contact'){
-        fs.readFile('./Pages/Contact.html', (err, data)=>{
+        fs.readFile('./Pages/Contact.html', 'utf-8', (err, data)=>{
             if(!err){
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(data);
@@ -40,7 +40,7 @@ const server = http.createServer((req, res)=>{
         })
     }
     else if(req.url == '/terms'){
-        fs.readFile('./Pages/Terms.html', (err, data)=>{
+        fs.readFile('./Pages/Terms.html','utf-8', (err, data)=>{
             if(!err){
                 res.writeHead(200, {'content-type': 'text/html'});
                 res.write(data);
